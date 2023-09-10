@@ -1,6 +1,6 @@
 [project]
-name = "example"
-description = "Example Goldy Bot V5 extension."
+name = "fun_plus_plus"
+description = "The goldy bot extension with 🎉 fun inside."
 authors = [
     {name = "Goldy", email = "goldy@devgoldy.xyz"},
 ]
@@ -8,13 +8,12 @@ readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.8"
 license = { file = "LICENSE" }
 keywords = [
-    "example extension", "extension template"
+    "fun++", "fun plus plus"
 ]
 dependencies = [
-    "GoldyBot>=5.0dev9", # Tells goldy bot which version of the framework this extension is for.
+    "GoldyBot>=5.0dev9",
 
-    "devgoldyutils>=2.5.4", # Example dependency.
-    "Pillow" # Example dependency.
+    "devgoldyutils>=2.5.6"
 ]
 version = "1.0.0"
 
@@ -24,5 +23,5 @@ dev = [
 ]
 
 [project.urls]
-GitHub = "https://github.com/Goldy-Bot/Goldy-Bot-V5"
-BugTracker = "https://github.com/Goldy-Bot/Goldy-Bot-V5/issues"
+GitHub = "https://github.com/Goldy-Bot/fun_plus_plus"
+BugTracker = "https://github.com/Goldy-Bot/fun_plus_plus/issues"

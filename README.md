@@ -1,9 +1,9 @@
 <div align="center">
 
-  # ❓ Extension Template
+  # 🥳 Fun++
 
-  <sub>Example Goldy Bot V5 extension.</sub>
+  <sub>The goldy bot extension with 🎉 fun inside.</sub>
 
 </div>
 
-> You may use this as a template to get started rapidly. ⚡
+> ### Readme Soon...
