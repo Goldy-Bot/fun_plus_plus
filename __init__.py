@@ -2,6 +2,9 @@ import random
 import GoldyBot
 from io import BytesIO
 
+from .goldy import Goldy
+from .utils import uwuify_string
+
 class FunPlusPlus(GoldyBot.Extension):
     def __init__(self):
         super().__init__()
@@ -35,4 +38,25 @@ class FunPlusPlus(GoldyBot.Extension):
         )
 
 
-load = lambda: FunPlusPlus()
+    @GoldyBot.command("uwuify", description = "😳 Translates English into UwU language.", wait = True)
+    async def uwuify_cmd(self, platter: GoldyBot.GoldPlatter, text: str):
+        result = await uwuify_string(text, self.goldy)
+
+        embed = GoldyBot.Embed(
+            "🟧 UwUify", 
+            description = f"""
+            ```diff
+            {"+ " if len(text) < 600 else ""}{result}
+
+            {"- " + text if len(text) < 600 else ""}
+            ```
+            """, 
+            colour = GoldyBot.Colours.AKI_ORANGE
+        )
+
+        await platter.send_message(embeds = [embed])
+
+
+def load():
+    Goldy()
+    FunPlusPlus()

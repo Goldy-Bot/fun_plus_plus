@@ -11,8 +11,9 @@ keywords = [
     "fun++", "fun plus plus"
 ]
 dependencies = [
-    "GoldyBot>=5.0dev9",
+    "GoldyBot>=5.0dev12",
 
+    "Pillow",
     "devgoldyutils>=2.5.6"
 ]
 version = "1.0.0"
