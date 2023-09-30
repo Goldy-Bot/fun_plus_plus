@@ -15,6 +15,7 @@ class FunPlusPlus(GoldyBot.Extension):
         )
         self.cat_embed_titles = ["😺 Meow!", "😻 Kitty!", "😽 Kitty Cat"]
 
+
     @GoldyBot.command(description = "😺 Returns a random adorable meow meow.", wait = True)
     async def cat(self, platter: GoldyBot.GoldPlatter):
         r = await self.http_session.get("https://some-random-api.com/img/cat")
@@ -37,7 +38,6 @@ class FunPlusPlus(GoldyBot.Extension):
             reply = True
         )
 
-
     @GoldyBot.command("uwuify", description = "😳 Translates English into UwU language.", wait = True)
     async def uwuify_cmd(self, platter: GoldyBot.GoldPlatter, text: str):
         result = await uwuify_string(text, self.goldy)
@@ -45,10 +45,8 @@ class FunPlusPlus(GoldyBot.Extension):
         embed = GoldyBot.Embed(
             "🟧 UwUify", 
             description = f"""
-            ```diff
-            {"+ " if len(text) < 600 else ""}{result}
-
-            {"- " + text if len(text) < 600 else ""}
+            ```
+            {result}
             ```
             """, 
             colour = GoldyBot.Colours.AKI_ORANGE
