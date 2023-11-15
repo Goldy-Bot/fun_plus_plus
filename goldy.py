@@ -32,7 +32,7 @@ class Goldy(GoldyBot.Extension):
             ],
             2: [
                 self.uwuify,
-                lambda x: x.send_message(f"HEY I'M FROM THE FUTURE, Goldy Corp will take over the world in 2036 with A.I robots!", reply = True),
+                lambda x: x.send_message("HEY I'M FROM THE FUTURE, Goldy Corp will take over the world in 2036 with A.I robots!", reply = True),
                 lambda x: x.send_message(f"**{self.goldy.config.branding_name} A.I** Soon™", reply = True),
             ],
             3: [
@@ -62,7 +62,7 @@ class Goldy(GoldyBot.Extension):
     async def goldy_cmd(self, platter: GoldyBot.GoldPlatter):
         member_id = platter.author.id
 
-        if not member_id in self.member_attempts:
+        if member_id not in self.member_attempts:
             self.member_attempts[member_id] = 1
 
         elif self.member_attempts[member_id] > len(self.actions):
