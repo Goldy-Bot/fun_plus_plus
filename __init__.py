@@ -13,7 +13,7 @@ class FunPlusPlus(GoldyBot.Extension):
         self.rip_footer = GoldyBot.EmbedFooter(
             text = "🖤 Rest in piece, Telk (the original creator of the API used here). You will be missed."
         )
-        self.cat_embed_titles = ["😺 Meow!", "😻 Kitty!", "😽 Kitty Cat"]
+        self.cat_footers = ["😺 Meow!", "😻 Kitty!", "😽 Kitty Cat!"]
 
 
     @GoldyBot.command(description = "😺 Returns a random adorable meow meow.", wait = True)
@@ -28,13 +28,13 @@ class FunPlusPlus(GoldyBot.Extension):
 
         embed = GoldyBot.Embed(
             colour = GoldyBot.Colours.from_image(cat_image),  
-            image = GoldyBot.EmbedImage(cat_image.attachment_url),
-            footer = self.rip_footer if random.randint(0, 4) == 0 else None
+            image = GoldyBot.EmbedImage(data["link"])
         )
+
+        embed.set_random_footer([self.rip_footer] + self.cat_footers)
 
         await platter.send_message(
             embeds = [embed], 
-            files = [cat_image],
             reply = True
         )
 
