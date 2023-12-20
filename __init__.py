@@ -1,4 +1,3 @@
-import random
 import GoldyBot
 from io import BytesIO
 
