@@ -8,7 +8,7 @@ class FunPlusPlus(GoldyBot.Extension):
     def __init__(self):
         super().__init__()
 
-        self.http_session = self.goldy.http_client._session
+        self.http_client = self.goldy.http_client
         self.rip_footer = GoldyBot.EmbedFooter(
             text = "🖤 Rest in piece, Telk (the original creator of the API used here). You will be missed."
         )
@@ -17,10 +17,10 @@ class FunPlusPlus(GoldyBot.Extension):
 
     @GoldyBot.command(description = "😺 Returns a random adorable meow meow.", wait = True)
     async def cat(self, platter: GoldyBot.GoldPlatter):
-        r = await self.http_session.get("https://some-random-api.com/img/cat")
+        r = await self.http_client._session.get("https://some-random-api.com/img/cat")
         data = await r.json()
 
-        cat_image_response = await self.http_session.get(data["link"])
+        cat_image_response = await self.http_client._session.get(data["link"])
 
         cat_image_bytes = await cat_image_response.read()
         cat_image = GoldyBot.File(BytesIO(cat_image_bytes), file_name = "image.png")
